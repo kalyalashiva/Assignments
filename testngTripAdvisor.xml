@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+<parameter name="url" value="https://www.tripadvisor.in" />
+<parameter name="hotelName" value="Club Mahindra" />
+<parameter name="title" value="Review Title" />
+<parameter name="summary" value="Review Summay" />
+  <test name="TripAdvisorTest">
+    <classes>
+      <class name="Assignment.SeleniumAssignment.TripAdvisorTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

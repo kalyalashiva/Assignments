@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="summary" value="Review Summay"/>
+  <parameter name="title" value="Review Title"/>
+  <parameter name="hotelName" value="Club Mahindra"/>
+  <parameter name="url" value="https://www.tripadvisor.in"/>
+  <test name="TripAdvisorTest">
+    <classes>
+      <class name="Assignment.SeleniumAssignment.TripAdvisorTest"/>
+    </classes>
+  </test> <!-- TripAdvisorTest -->
+</suite> <!-- Failed suite [Suite] -->

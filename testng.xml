@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+<parameter name="browser" value="Chrome" />
+<parameter name="url1" value="https://www.amazon.in" />
+<parameter name="url2" value="https://www.flipkart.com/" />
+<parameter name="item" value="iPhone XR (64GB) - Yellow" />
+  <test name="AmazonTest">
+    <classes>
+      <class name="Assignment.SeleniumAssignment.FirstAssignment"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
