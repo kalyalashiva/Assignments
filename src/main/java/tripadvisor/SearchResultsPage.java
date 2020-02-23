@@ -20,6 +20,11 @@ public class SearchResultsPage {
 	@FindBy(xpath="//div[@class='result-title']/span")
 	public WebElement hotelLink;
 	
+	/**
+	 * Method to click on Hotel Link
+	 * @param hotelName
+	 * 
+	 */
 	public HotelDetailsPage clickOnHotel() {
 		
 		hotelLink.click();
