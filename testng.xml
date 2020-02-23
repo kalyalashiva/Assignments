@@ -8,5 +8,5 @@
     <classes>
       <class name="Assignment.SeleniumAssignment.FirstAssignment"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+</suite>
