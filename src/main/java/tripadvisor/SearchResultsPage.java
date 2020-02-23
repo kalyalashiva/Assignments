@@ -22,7 +22,6 @@ public class SearchResultsPage {
 	
 	/**
 	 * Method to click on Hotel Link
-	 * @param hotelName
 	 * 
 	 */
 	public HotelDetailsPage clickOnHotel() {
