@@ -25,7 +25,6 @@ public class HotelDetailsPage {
 	
 	/**
 	 * Method to click on Write a Review button
-	 * @param hotelName
 	 * 
 	 */
 	public UserReviewPage clickOnWriteAReview() {
