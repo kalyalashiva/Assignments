@@ -23,6 +23,11 @@ public class HotelDetailsPage {
 	@FindBy(xpath="//a[text()='Write a review']")
 	public WebElement btnWriteAReview;
 	
+	/**
+	 * Method to click on Write a Review button
+	 * @param hotelName
+	 * 
+	 */
 	public UserReviewPage clickOnWriteAReview() {
 		
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", btnWriteAReview);
