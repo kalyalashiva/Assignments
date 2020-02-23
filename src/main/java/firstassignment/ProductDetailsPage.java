@@ -19,35 +19,21 @@ public class ProductDetailsPage {
 	@FindBy(xpath="//span[@id='priceblock_ourprice'] | //div[@class='_1vC4OE _3qQ9m1']")
 	public WebElement txtPrice;
 	
-	@FindBy(xpath="//div[@class='_1vC4OE _3qQ9m1']")
-	public WebElement txtPriceFlipkart;
-	
-	/*@FindBy(xpath="//div[@class='_1vC4OE _3qQ9m1']")
-	public WebElement txtPriceInFlipKart;*/
-	
-	public Double getPrice() throws InterruptedException {
+	/**
+	 * Method to get price of the product
+	 * 
+	 */
+	public Double getPrice(){
 		
 		switchTab();
 		String price = txtPrice.getText().replaceAll("[^0-9.]", "");	
 		return Double.valueOf(price);
-
-	}
-
-	public Double getPriceForProduct() throws InterruptedException {
-		
-		switchTab();
-		String price = txtPrice.getText().replaceAll("[^0-9.]", "");	
-		return Double.valueOf(price);
-
 	}
 
 	public void switchTab(){
 		
 		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
-
 	}
 	
-	
-
 }
