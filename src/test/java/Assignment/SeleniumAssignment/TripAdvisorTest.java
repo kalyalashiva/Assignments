@@ -33,9 +33,10 @@ public class TripAdvisorTest {
 			homePage.searchHotel(hotelName)
 					.clickOnHotel()
 					.clickOnWriteAReview()
-					.clickOnRating()
+					.clickOnOverAllRating()
 					.enterReviewTitle(title)
 					.enterReviewSummart(summary)
+					.clickOnHotelRatings()
 					.clickReviewCheckBox();
 		}
 		
