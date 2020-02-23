@@ -33,22 +33,40 @@ public class UserReviewPage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	/**
+	 * Method to enter Review Title
+	 * @param titleName
+	 * 
+	 */
 	public UserReviewPage enterReviewTitle(String title) {
 		textBoxTitle.sendKeys(title);
 		return PageFactory.initElements(driver, UserReviewPage.class);
 	}
 
+	/**
+	 * Method to enter Review Summary
+	 * @param summary
+	 * 
+	 */
 	public UserReviewPage enterReviewSummart(String summary) {
 		textBoxReview.sendKeys(summary);
 		return PageFactory.initElements(driver, UserReviewPage.class);
 	}
 	
+	/**
+	 * Method to submit CheckBox
+	 * 
+	 */
 	public UserReviewPage clickReviewCheckBox() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", chkBoxReview);
 		chkBoxReview.click();
 		return PageFactory.initElements(driver, UserReviewPage.class);
 	}
 	
+	/**
+	 * Method to click on Over all Rating 
+	 * 
+	 */
 	public UserReviewPage clickOnOverAllRating() {
 
 		 Actions action = new Actions(driver);
@@ -57,6 +75,11 @@ public class UserReviewPage {
 		return PageFactory.initElements(driver, UserReviewPage.class);
 	}
 	
+	/**
+	 * Method to click on Hotel Ratings
+	 * Service Rating, Room Rating, Cleanliness Rating, Sleep Quality, Location Rating, Value Rating  
+	 *
+	 */
 	public UserReviewPage clickOnHotelRatings() {
 
 		 Actions action = new Actions(driver);
