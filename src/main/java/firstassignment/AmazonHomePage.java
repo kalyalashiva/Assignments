@@ -28,7 +28,12 @@ public class AmazonHomePage extends WebDriverUtils{
 	
 	@FindBy(xpath="//span[@id='priceblock_ourprice']")
 	public WebElement txtPrice;
-		
+	
+	/**
+    	 * Method to search product.
+	 * @param productName
+     	 *  
+     	 */
 	public AmazonHomePage searchProduct(String mobile) {
 		
 		textBoxSearch.clear();
@@ -36,10 +41,13 @@ public class AmazonHomePage extends WebDriverUtils{
 		btnSearchIcon.click();
 		
 		return PageFactory.initElements(driver, AmazonHomePage.class);
-		
 	}
 	
-	
+	/**
+    	 * Method to click on the product
+     	 * @param productName
+	 *
+     	 */
 	public ProductDetailsPage clickOnProduct(String mobile) {
 				
 		for(WebElement link:linkSearchResults) {
@@ -60,13 +68,16 @@ public class AmazonHomePage extends WebDriverUtils{
 
 	}
 	
+	/**
+    	 * Method to get price of required product
+	 *
+     	 */
 	public Double getPrice() throws InterruptedException {
 		
 		switchTab();
 		System.out.println(driver.getTitle());
 		String price = txtPrice.getText().replaceAll("[^0-9.]", "");	
 		return Double.valueOf(price);
-
 	}
 	
 	public void switchToParentTab() {
