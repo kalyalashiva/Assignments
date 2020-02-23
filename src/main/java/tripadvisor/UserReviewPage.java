@@ -54,7 +54,7 @@ public class UserReviewPage {
 	}
 	
 	/**
-	 * Method to submit CheckBox
+	 * Method to Click on submit CheckBox
 	 * 
 	 */
 	public UserReviewPage clickReviewCheckBox() {
