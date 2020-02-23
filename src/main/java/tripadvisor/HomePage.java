@@ -30,6 +30,11 @@ public class HomePage extends WebDriverUtils{
 	@FindBy(xpath="//div[@class='result-title']/span")
 	public List<WebElement> resultList;
 	
+	/**
+	 * Method to search Hotel in home page
+	 * @param hotelName
+	 * 
+	 */
 	public SearchResultsPage searchHotel(String hotelName) {
 		
 		btnSearchIcon.click();
