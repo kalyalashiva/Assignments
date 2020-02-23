@@ -1,5 +1,8 @@
 package tripadvisor;
 
+import java.util.List;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,8 +13,6 @@ public class UserReviewPage {
 	
 	WebDriver driver;
 	
-	public String Ratingxpath = "//select[@id='qid10']//option[@value='5']";
-
 	@FindBy(xpath="//*[@name='ReviewTitle']")
 	public WebElement textBoxTitle;
 	
@@ -21,8 +22,11 @@ public class UserReviewPage {
 	@FindBy(xpath="//input[@type='checkbox']")
 	public WebElement chkBoxReview;
 	
-	@FindBy(xpath="//div[@class='easyClear bigRatingParent']//span[@data-value='0']")
-	public WebElement bubbleRatings;
+	@FindBy(id="bubble_rating")
+	public WebElement overAllRating;
+	
+	@FindBy(xpath="//span[contains(@id,'_bubbles')]")
+	public List<WebElement> allRatings;
 	
 	public UserReviewPage(WebDriver driver) {
 		this.driver= driver;
@@ -40,17 +44,29 @@ public class UserReviewPage {
 	}
 	
 	public UserReviewPage clickReviewCheckBox() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", chkBoxReview);
 		chkBoxReview.click();
 		return PageFactory.initElements(driver, UserReviewPage.class);
 	}
 	
-	public UserReviewPage clickOnRating() {
+	public UserReviewPage clickOnOverAllRating() {
 
 		 Actions action = new Actions(driver);
-		 action.moveToElement(bubbleRatings).click().build().perform();
+		 action.moveToElement(overAllRating, 75, 0).click().build().perform();
 		 
 		return PageFactory.initElements(driver, UserReviewPage.class);
 	}
 	
-}
+	public UserReviewPage clickOnHotelRatings() {
 
+		 Actions action = new Actions(driver);
+		 	
+		for(WebElement ele:allRatings) {
+			if(ele.isDisplayed()) {
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", ele);
+				 action.moveToElement(ele, 40, 0).click().build().perform();		
+			}
+		}
+		return PageFactory.initElements(driver, UserReviewPage.class);
+	}
+}
