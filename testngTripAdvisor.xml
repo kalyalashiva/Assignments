@@ -8,5 +8,5 @@
     <classes>
       <class name="Assignment.SeleniumAssignment.TripAdvisorTest"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+</suite>
