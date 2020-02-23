@@ -31,31 +31,36 @@ public class FlipkartHomePage {
 	@FindBy(xpath="//button[@class='_2AkmmA _29YdH8']")
 	public WebElement btnClosePopup;
 	
-	public FlipkartHomePage searchProduct(String mobile) {
+	/**
+    	 * Method to search product
+     	 * @param productName
+	 *
+     	 */
+	public FlipkartHomePage searchProduct(String product) {
 		
 		closeLoginPopup();
 		textBoxSearch.clear();
-		textBoxSearch.sendKeys(mobile);
+		textBoxSearch.sendKeys(product);
 		btnSearch.click();
 		
 		return PageFactory.initElements(driver, FlipkartHomePage.class);
-		
 	}
 	
+	/**
+    	 * Method to click on the product
+     	 * @param productName
+	 *
+     	 */
 	public ProductDetailsPage clickOnProduct(String product) {
 				
-		/*for(WebElement link:linkSearchResults) {
-			
-			if(link.getText().contains(product)) {
-				link.click();
-			}
-		}*/
-	
 		linkSearchResult.click();
 		return PageFactory.initElements(driver, ProductDetailsPage.class);
 		
 	}
-	
+	/**
+    	 * Method to close login popup if displays
+	 *
+     	 */
 	public void closeLoginPopup() {
 		
 		if(btnClosePopup.isDisplayed()) {
