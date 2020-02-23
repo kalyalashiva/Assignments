@@ -25,10 +25,9 @@ public class HotelDetailsPage {
 	
 	public UserReviewPage clickOnWriteAReview() {
 		
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,250)", "");		
-		btnWriteAReview.click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", btnWriteAReview);
 		
+		btnWriteAReview.click();
 		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(2));
 		
